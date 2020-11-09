@@ -62,7 +62,7 @@ public  class Database   {
             }
             //cursor.moveToNext();
         }
-        return posts;
+         return posts;
     }
 
 

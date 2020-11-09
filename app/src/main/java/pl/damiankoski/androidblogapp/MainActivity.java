@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
          SQLiteDatabase db = this.openOrCreateDatabase("blogApp.db",MODE_PRIVATE,null);
          database = new Database(db);
-       // setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
          
         try {
             ArrayList<Post> arrayList = database.QueryPosts();
@@ -30,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
         }
         
         
-        //titles = getResources().getStringArray(R.array.post_titles);
-        //titles = getResources().getStringArray(R.array.post_authors);
+        titles = getResources().getStringArray(R.array.post_titles);
+        titles = getResources().getStringArray(R.array.post_authors);
 
-        //postsList = findViewById(R.id.posts_list);
+        postsList = findViewById(R.id.posts_list);
 
-        //PostsAdapter postsAdapter = new PostsAdapter(this, titles, authors);
+        PostsAdapter postsAdapter = new PostsAdapter(this, titles, authors);
      }
 }
