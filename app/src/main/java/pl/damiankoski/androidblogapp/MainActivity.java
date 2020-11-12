@@ -11,15 +11,17 @@ import android.view.View;
 import java.io.Console;
 import java.util.ArrayList;
 
+import java.io.Console;
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     String titles[];
     String authors[];
     Database database;
     RecyclerView postsList;
 
-     @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
-         
         super.onCreate(savedInstanceState);
          SQLiteDatabase db = this.openOrCreateDatabase("blogApp.db",MODE_PRIVATE,null);
          database = new Database(db);

@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 public  class Database   {
     private SQLiteDatabase db;
     
@@ -81,6 +82,4 @@ public  class Database   {
     public void Close(){
         db.close();
     }
-
-
 }
