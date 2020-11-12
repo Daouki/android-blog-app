@@ -6,9 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@android:drawable/ic_input_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="OnCrateButtonClick" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/posts_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+            android:id="@+id/posts_list"
+            android:layout_width="409dp"
+            android:layout_height="661dp"
+            tools:layout_editor_absoluteY="-16dp"
+            tools:layout_editor_absoluteX="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

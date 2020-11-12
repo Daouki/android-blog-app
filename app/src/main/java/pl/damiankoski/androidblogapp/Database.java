@@ -1,18 +1,12 @@
 package pl.damiankoski.androidblogapp;
 
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
-import java.net.IDN;
 import java.text.SimpleDateFormat;
-import java.time.temporal.ValueRange;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.function.DoubleBinaryOperator;
+
 
 public  class Database   {
     private SQLiteDatabase db;
@@ -35,7 +29,7 @@ public  class Database   {
     }
     
 
-    public Post QueryPosts(int id) {
+    public Post QueryPost(int id) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MMM-yyyy");
         String query = "SELECT * FROM Post WHERE post_id = " + id;
         
@@ -65,5 +59,27 @@ public  class Database   {
          return posts;
     }
 
-
+    public void InsertPost(String title, String author, Date date, String content){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MMM-yyyy");
+        
+        StringBuilder query = new StringBuilder();
+        query
+                .append("INSERT INTO posts (title,author,creation_date,content)VALUES ('")
+                .append(title)
+                .append("','")
+                .append(author)
+                .append("','")
+                .append(simpleDateFormat.format(date))
+                .append("','")
+                .append(content)
+                .append("')");
+        db.execSQL(query.toString());
+    }
+    public void RemovePost(Post post){
+        String query = "DELETE FROM posts WHERE id = " + post.getId();
+        db.execSQL(query);
+    }
+    public void Close(){
+        db.close();
+    }
 }
