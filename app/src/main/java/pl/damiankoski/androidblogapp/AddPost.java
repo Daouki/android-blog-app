@@ -29,7 +29,18 @@ public class AddPost extends AppCompatActivity {
         database.Close();
     }
 
-    public void onAddButtonClick(View v) {
+    public void onBack(View v) {
+        finish();
+    }
+
+    public void onClean(View v) {
+        ((TextView)findViewById(R.id.postTitle)).setText("");
+        ((TextView)findViewById(R.id.postAuthor)).setText("");
+        ((CalendarView)findViewById(R.id.postDate)).setDate(new Date().getTime());
+        ((EditText)findViewById(R.id.postContent)).setText("");
+    }
+
+    public void onCreatePost(View v) {
         TextView title = findViewById(R.id.postTitle);
         TextView author = findViewById(R.id.postAuthor);
         CalendarView date = findViewById(R.id.postDate);
@@ -39,6 +50,6 @@ public class AddPost extends AppCompatActivity {
         } catch (Exception e) {
             System.out.println(e);
         }
-
+        finish();
     }
 }
