@@ -4,25 +4,29 @@ import java.util.Date;
 
 public class Post {
     private final int id;
-    private String authors;
+    private String author;
     private String title;
     private String postContent;
     private Date dateOfPost;
 
-    public Post(int id, String authors, String title, String postContent, Date dateOfPost) {
+    public Post(int id, String title, String author, Date dateOfPost, String postContent) {
         this.id = id;
-        this.authors = authors;
+        this.author = author;
         this.title = title;
         this.postContent = postContent;
         this.dateOfPost = dateOfPost;
     }
 
-    public String get_author() {
-        return authors;
+    public int getId() {
+        return id;
     }
 
-    public void setAuthors(String authors) {
-        this.authors = authors;
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public String getTitle() {
@@ -47,9 +51,5 @@ public class Post {
 
     public void setDateOfPost(Date dateOfPost) {
         this.dateOfPost = dateOfPost;
-    }
-
-    public int getId() {
-        return id;
     }
 }

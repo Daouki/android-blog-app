@@ -46,7 +46,7 @@ public class AddPost extends AppCompatActivity {
         CalendarView date = findViewById(R.id.postDate);
         EditText content = findViewById(R.id.postContent);
         try {
-            database.InsertPost(title.getText().toString(), author.getText().toString(), new Date(date.getDate()), content.getText().toString());
+            database.insertPost(title.getText().toString(), author.getText().toString(), new Date(date.getDate()), content.getText().toString());
         } catch (Exception e) {
             System.out.println(e);
         }
