@@ -5,12 +5,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     Database database;
@@ -23,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         database = new Database(openOrCreateDatabase("blogApp.db", MODE_PRIVATE, null));
         ArrayList<Post> posts = database.queryPosts();
-
+        
         postsList = findViewById(R.id.posts_list);
         PostsAdapter postsAdapter = new PostsAdapter(this, posts);
         postsList.setAdapter(postsAdapter);
@@ -40,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void OnCrateButtonClick(View v){
-         Intent intent = new Intent(this,AddPost.class);
+         Intent intent = new Intent(this, AddPostActivity.class);
          startActivity(intent);
      }
 }

@@ -17,7 +17,7 @@ public class Database {
     }
 
     private void onCreate() {
-//        db.execSQL("DROP TABLE posts;");
+        //db.execSQL("DROP TABLE posts;");
 
         String query = "CREATE TABLE IF NOT EXISTS posts (\n" +
                 "    post_id       INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
