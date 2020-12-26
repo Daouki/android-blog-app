@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import java.util.Date;
 
-public class AddPost extends AppCompatActivity {
+public class AddPostActivity extends AppCompatActivity {
 
     private Database database;
 
@@ -28,6 +28,7 @@ public class AddPost extends AppCompatActivity {
         super.onDestroy();
         database.Close();
     }
+    
 
     public void onBack(View v) {
         finish();
